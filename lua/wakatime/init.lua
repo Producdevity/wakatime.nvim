@@ -22,7 +22,7 @@ local VERSION = '12.0.0'
 local EXIT_CODE_CONFIG_PARSE_ERROR = 103
 local EXIT_CODE_API_KEY_ERROR = 104
 
---- @class WakatimeConfig
+--- @class wakatime.Config
 --- @field heartbeat_frequency? number # Frequency in minutes to send heartbeats for the same file. Defaults to 2.
 --- @field cli_path? string # Absolute path to wakatime-cli. Overrides auto-detection. Defaults to nil.
 --- @field python_binary? string # Path to Python executable for CLI installation. Overrides auto-detection. Defaults to nil.
@@ -36,7 +36,7 @@ local EXIT_CODE_API_KEY_ERROR = 104
 -- Module state (equivalent to s: variables)
 local state = {
   initialized = false,
-  --- @type WakatimeConfig
+  --- @type wakatime.Config
   config = { -- Default configuration
     heartbeat_frequency = 2, -- minutes
     cli_path = nil, -- Auto-detect if nil
