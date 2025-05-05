@@ -1074,10 +1074,10 @@ function M.setup(user_config)
   end
   state.home = state.home:gsub("\\", "/") -- Normalize path separators
 
-  -- Determine plugin root folder (assuming standard structure lua/wakatime/init.lua)
+  -- Determine plugin root folder
   -- This relies on debug info, might be fragile if file structure changes.
   local script_path = debug.getinfo(1, "S").source:sub(2) -- Remove leading '@'
-  state.plugin_root_folder = fn.fnamemodify(script_path, ":h:h") -- Go up two levels (init.lua -> wakatime -> root)
+  state.plugin_root_folder = fn.fnamemodify(script_path, ":h:h:h")
   state.plugin_root_folder = state.plugin_root_folder:gsub("\\", "/")
 
   -- Define paths based on home dir
@@ -1131,7 +1131,7 @@ function M.setup(user_config)
       if #state.heartbeats_buffer > 0 then
         vim.notify("[WakaTime] Sending final heartbeats before quitting...", vim.log.levels.INFO)
         send_heartbeats()
-        -- Note: Neovim might quit before the async send completes fully.
+        -- NOTE: Neovim might quit before the async send completes fully.
         -- Consider a synchronous send here if absolutely critical, but it will block exit.
       end
     end,
