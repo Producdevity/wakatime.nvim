@@ -14,46 +14,44 @@
 
    Or with [Pathogen](https://github.com/tpope/vim-pathogen): `cd ~/.vim/bundle && git clone https://github.com/wakatime/vim-wakatime.git`
 
-   Or with [Vim-plug](https://github.com/junegunn/vim-plug):  add `Plug 'wakatime/vim-wakatime'` to .vimrc file. While in vim reload .vimrc with `:so ~/.vimrc` or restart vim, enter
-    `:PlugInstall`
+   Or with [Vim-plug](https://github.com/junegunn/vim-plug): add `Plug 'wakatime/vim-wakatime'` to .vimrc file. While in vim reload .vimrc with `:so ~/.vimrc` or restart vim, enter
+   `:PlugInstall`
 
    Or with [Packer](https://github.com/wbthomason/packer.nvim): add `use 'wakatime/vim-wakatime'` to your plugins file.
 
    Or with [Vim 8+](https://www.vim.org/): `mkdir -p ~/.vim/pack/plugins/start && cd ~/.vim/pack/plugins/start && git clone https://github.com/wakatime/vim-wakatime.git`
 
    Or with [Lazy.nvim](https://github.com/folke/lazy.nvim.git): add to your plugins file.
+
    ```lua
    { 'wakatime/vim-wakatime', lazy = false }
    ```
 
-3. Restart Vim.
+2. Restart Vim.
 
-4. If this is the first WakaTime plugin on your machine, type `:WakaTimeApiKey` inside Vim.
+3. If this is the first WakaTime plugin on your machine, type `:WakaTimeApiKey` inside Vim.
 
-5. Enter your [API Key](https://wakatime.com/api-key), then press `enter`.
+4. Enter your [API Key](https://wakatime.com/api-key), then press `enter`.
 
-6. Use Vim and your coding activity will be displayed on your [WakaTime dashboard](https://wakatime.com).
-
+5. Use Vim and your coding activity will be displayed on your [WakaTime dashboard](https://wakatime.com).
 
 ## Screen Shots
 
 ![Project Overview](https://wakatime.com/static/img/ScreenShots/Screen-Shot-2016-03-21.png)
 
-
 ## Commands
 
-* `:WakaTimeApiKey` - set or change the api key saved in your `~/.wakatime.cfg`
-* `:WakaTimeDebugEnable` - enable debug mode (may slow down Vim so disable when finished debugging)
-* `:WakaTimeDebugDisable` - disable debug mode
-* `:WakaTimeScreenRedrawEnable` - enable screen redraw to prevent artifacts (only for Vim < 8.0)
-* `:WakaTimeScreenRedrawEnableAuto` - redraw screen when plugin takes too long (only for Vim < 8.0)
-* `:WakaTimeScreenRedrawDisable` - disable screen redraw
-* `:WakaTimeToday` - echo your total coding activity for Today
+- `:WakaTimeApiKey` - set or change the api key saved in your `~/.wakatime.cfg`
+- `:WakaTimeDebugEnable` - enable debug mode (may slow down Vim so disable when finished debugging)
+- `:WakaTimeDebugDisable` - disable debug mode
+- `:WakaTimeScreenRedrawEnable` - enable screen redraw to prevent artifacts (only for Vim < 8.0)
+- `:WakaTimeScreenRedrawEnableAuto` - redraw screen when plugin takes too long (only for Vim < 8.0)
+- `:WakaTimeScreenRedrawDisable` - disable screen redraw
+- `:WakaTimeToday` - echo your total coding activity for Today
 
 The vim-wakatime plugin automatically downloads and updates [wakatime-cli][wakatime-cli] in your `$WAKATIME_HOME/.wakatime/` folder.
 WakaTime plugins also share a common [$WAKATIME_HOME/.wakatime.cfg config file][wakatime-cli-config].
 `$WAKATIME_HOME` defaults to your `$HOME` folder.
-
 
 ## Troubleshooting
 
@@ -68,7 +66,6 @@ With Debug Mode enabled, the plugin sends data synchronously so disable it when 
 
 The [How to Debug Plugins][how to debug] guide shows how to check when coding activity was last received from Vim use the [User Agents API][user agents api].
 For more general troubleshooting info, see the [wakatime-cli Troubleshooting Section][wakatime-cli-help].
-
 
 ## Uninstalling
 
